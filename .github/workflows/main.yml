@@ -1,4 +1,4 @@
-name: Celeb Arab Update
+name: Update Celebrity News
 
 on:
   schedule:
@@ -15,18 +15,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          [span_4](start_span)python-version: '3.10' #[span_4](end_span)
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml
+        [span_5](start_span)run: pip install requests beautifulsoup4 lxml #[span_5](end_span)
 
       - name: Run Scraper
-        run: python scraper.py
+        [span_6](start_span)run: python scraper.py #[span_6](end_span)
 
       - name: Commit and Push
         run: |
-          git config --global user.name "github-actions[bot]"
+          [span_7](start_span)git config --global user.name "github-actions[bot]" #[span_7](end_span)
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Auto Update Content" || echo "No changes"
+          [span_8](start_span)git commit -m "Auto Update News" || echo "No changes to commit" #[span_8](end_span)
           git push
