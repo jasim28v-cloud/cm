@@ -1,4 +1,4 @@
-name: Update Celebrity News
+name: Update Sayidaty Light Content
 
 on:
   schedule:
@@ -18,7 +18,8 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml
+        run: |
+          pip install requests beautifulsoup4 lxml
 
       - name: Run Scraper
         run: python scraper.py
@@ -28,5 +29,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Auto Update News" || echo "No changes to commit"
+          git commit -m "Auto Update: $(date)" || echo "No changes to commit"
           git push
