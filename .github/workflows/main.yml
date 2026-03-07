@@ -15,18 +15,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          [span_4](start_span)python-version: '3.10' #[span_4](end_span)
+          python-version: '3.10'
 
       - name: Install dependencies
-        [span_5](start_span)run: pip install requests beautifulsoup4 lxml #[span_5](end_span)
+        run: pip install requests beautifulsoup4 lxml
 
       - name: Run Scraper
-        [span_6](start_span)run: python scraper.py #[span_6](end_span)
+        run: python scraper.py
 
       - name: Commit and Push
         run: |
-          [span_7](start_span)git config --global user.name "github-actions[bot]" #[span_7](end_span)
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add index.html
-          [span_8](start_span)git commit -m "Auto Update News" || echo "No changes to commit" #[span_8](end_span)
+          git commit -m "Auto Update News" || echo "No changes to commit"
           git push
